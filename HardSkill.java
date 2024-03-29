@@ -10,4 +10,35 @@ public class HardSkill {
         - getLevel(): Retrieves the level of the hardSkill.
         - displayDetails(): Displays the title and skillLevel of each hardSkill
     */
+
+    // Attributes
+    String title;
+    String level;
+
+    // Methods
+    public void setTitle(String newTitle) {
+        // Sets String title to newTitle
+        title = newTitle;
+    }
+
+    public void setLevel(String newLevel) {
+        // Sets String level to newLevel
+        level = newLevel;
+    }
+
+    public String getTitle() {
+        // Returns String title;
+        return title;
+    }
+
+    public String getLevel() {
+        // Returns String level;
+        return level;
+    }
+
+    public void displayDetails() {
+        // Prints title and level Strings
+        System.out.println("Skill: " + getTitle());
+        System.out.println("Level: " + getLevel());
+    }
 }
