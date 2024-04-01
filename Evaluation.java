@@ -13,4 +13,5 @@ public class Evaluation {
         eID = evaluationID;
         State = employeeState; 
     }
+    
 }
