@@ -1,110 +1,31 @@
-// TempArrays.java
-
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Temparrays {
-    // Arrays for storing HR data
-    private ArrayList<Employee> employees = new ArrayList<>();
-    private ArrayList<Department> departments = new ArrayList<>();
-    // You may add more arrays for other entities like salaries, benefits, etc.
+public class TempArrays {
 
-    // Method to add employee
-    public void addEmployee(Employee emp) {
-        employees.add(emp);
+    public TempArrays() {
+        ArrayList<Employee> employees; // John
+        ArrayList<Task> tasks; // Duru
+        ArrayList<Skill> skills; // Duru
+        ArrayList<Job> jobs; // Jaden
+        ArrayList<Evaluation> evaluations; // Jaden
     }
 
-    // Method to edit employee
-    public void editEmployee(int index, Employee emp) {
-        employees.set(index, emp);
-    }
+    public void editEmployee(int ID, String attribute, String newValue) {}
+    public void deleteEmployee() {}
 
-    // Method to delete employee
-    public void deleteEmployee(int index) {
-        employees.remove(index);
-    }
+    public void addTask() {}
+    public void editTask() {}
+    public void deleteTask() {}
 
-    // Method to add department
-    public void addDepartment(Department dept) {
-        departments.add(dept);
-    }
+    public void addSkill() {}
+    public void editSkill() {}
+    public void deleteSkill() {}
 
-    // Method to edit department
-    public void editDepartment(int index, Department dept) {
-        departments.set(index, dept);
-    }
+    public void addJob() {}
+    public void editJob() {}
+    public void deleteJob() {}
 
-    // Method to delete department
-    public void deleteDepartment(int index) {
-        departments.remove(index);
-    }
+    public void editEvaluation() {}
+    public void deleteEvaluation() {}
 
-    // Method to display employees
-    public void displayEmployees() {
-        for (Employee emp : employees) {
-            System.out.println(emp);
-        }
-    }
-
-    // Method to display departments
-    public void displayDepartments() {
-        for (Department dept : departments) {
-            System.out.println(dept);
-        }
-    }
-
-    // Main method for testing
-    public static void main(String[] args) {
-        Temparrays hrApp = new Temparrays();
-        // You can create demo data here or use a separate method to populate the arrays
-        // Then test your methods here
-    }
-}
-
-// Sample Employee class
-class Employee {
-    private String name;
-    private int age;
-    // Add more fields as needed
-
-    // Constructor
-    public Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    // Getters and setters
-    // You can add more methods as needed
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-}
-
-// Sample Department class
-class Department {
-    private String name;
-    private String location;
-    // Add more fields as needed
-
-    // Constructor
-    public Department(String name, String location) {
-        this.name = name;
-        this.location = location;
-    }
-
-    // Getters and setters
-    // You can add more methods as needed
-
-    @Override
-    public String toString() {
-        return "Department{" +
-                "name='" + name + '\'' +
-                ", location='" + location + '\'' +
-                '}';
-    }
 }
