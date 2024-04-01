@@ -21,11 +21,11 @@ public class TempArrays {
     public void editSkill() {}
     public void deleteSkill() {}
 
-    public void addJob(int ID, String name, String title, String supervisor, int dateHired) {}
-    public void editJob(String title, String supervisor, int ID) {}
-    public void deleteJob(String title) {}
+    public void addJob() {}
+    public void editJob() {}
+    public void deleteJob() {}
 
-    public void editEvaluation(int evaluationID, String employeeState, char grade) {}
-    public void deleteEvaluation(String name, int evaluationID, String employeeState, char grade ) {}
+    public void editEvaluation() {}
+    public void deleteEvaluation() {}
 
 }
