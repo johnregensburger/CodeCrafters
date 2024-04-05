@@ -22,6 +22,7 @@ public class TempArrays {
     public void deleteSkill() {}
 
     public void addJob(int ID, String name, String title, String supervisor, int dateHired) {}
+
     public void editJob(String title, String supervisor, int ID) {}
     public void deleteJob(String title) {}
 
