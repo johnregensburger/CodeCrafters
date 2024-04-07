@@ -1,17 +1,35 @@
 public class Evaluation {
-    private final int employeeID;
-    private String firstName;
-    private String lastName;
     private int evaluationID;
-    private char grade;
     private String employeeState;
+    private char grade;
 
-    public Evaluation (String last, String first, int eID, char grade, String State) {
-        employeeID = 0;
-        lastName = last;
-        firstName = first;
-        eID = evaluationID;
-        State = employeeState; 
+    public Evaluation(int evaluationID, String employeeState, char grade) {
+        this.evaluationID = evaluationID;
+        this.employeeState = employeeState;
+        this.grade = grade;
     }
-    
+
+    public int getEvaluationID() {
+        return evaluationID;
+    }
+
+    public void setEvaluationID(int evaluationID) {
+        this.evaluationID = evaluationID;
+    }
+
+    public String getEmployeeState() {
+        return employeeState;
+    }
+
+    public void setEmployeeState(String employeeState) {
+        this.employeeState = employeeState;
+    }
+
+    public char getGrade() {
+        return grade;
+    }
+
+    public void setGrade(char grade) {
+        this.grade = grade;
+    }
 }
