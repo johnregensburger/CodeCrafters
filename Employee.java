@@ -49,7 +49,10 @@ public class Employee {
         this.title = title;
         this.supervisor = supervisor;
         this.dateHired = new Date(); // Default is the date and time at which the object is instantiated
-        TempArrays.employees.add(this);// Add new Employee to employees
+
+        this.evaluation = new Evaluation(this.employeeID, "N/A", 'C');
+
+        TempArrays.employees.add(this); // Add new Employee to employees
     }
 
     public int generateRandomID() {
@@ -69,6 +72,26 @@ public class Employee {
         } else {
             return generateRandomID(); // If no unique ID is found, it runs the method again
         }
+    }
+
+    public void addTask(Task t) {
+        tasks.add(t);
+    }
+
+    public int getTaskId(int i) {
+        return tasks.get(i).getId();
+    }
+
+    public void addSkill(Skill s) {
+        skills.add(s);
+    }
+
+    public int getSkillId(int i) {
+        return tasks.get(i).getId();
+    }
+
+    public void addJob(Job j) {
+        jobs.add(j);
     }
 
     public void setEmployeeID(int employeeID) {

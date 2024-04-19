@@ -110,16 +110,133 @@ public class TempArrays {
         }
     }
 
-    public void addTask() {}
-    public void editTask() {}
-    public void deleteTask() {}
+    public void addTask(int taskId, int employeeId, String name, boolean completed, Date dateAssigned, Date dateCompleted, double progress) {
+        Task t = new Task(taskId, employeeId, name, completed, dateAssigned, dateCompleted, progress);
+        tasks.add(t);
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getEmployeeID() == employeeId) {
+                employees.get(i).addTask(t);
+                break;
+            }
+        }
+    }
 
-    public void addSkill() {}
-    public void editSkill() {}
-    public void deleteSkill() {}
+    public void editTask(int taskId, int employeeId, boolean completed, Date dateAssigned, Date dateCompleted, double progress) {
+        for (int i = 0; i < tasks.size(); i++){
+            if (tasks.get(i).getId() == taskId){
+                tasks.get(i).setCompleted(completed);
+                tasks.get(i).setDateAssigned(dateAssigned);
+                tasks.get(i).setDateCompleted(dateCompleted);
+                tasks.get(i).setProgress(progress);
+                break;
+            }
+        }
+        for (int i = 0; i < employees.size(); i++) {    // For every item in employees
+            if (employees.get(i).getEmployeeID() == employeeId) {   // If it's the right employee
+                for (int j = 0; j < employees.get(i).tasks.size(); j++) {   // For every item in that employee's tasklist
+                    if (employees.get(i).tasks.get(j).getId() == taskId) { // If it's the right task
+                        tasks.get(i).setCompleted(completed);
+                        tasks.get(i).setDateAssigned(dateAssigned);
+                        tasks.get(i).setDateCompleted(dateCompleted);
+                        tasks.get(i).setProgress(progress);
+                        break;
+                    }
+                }
+            }
+            
+        }
+    }
 
-    public void addJob(int ID, String name, String title, String supervisor, int dateHired, ArrayList<Employee> jobs) {
-        Job.add(new Job(ID, name, title, supervisor, dateHired));
+    public void deleteTask(int selectedID) {
+        int empId = -1;
+        for (int i = 0; i < tasks.size(); i++) {
+            if (tasks.get(i).getId() == selectedID) {
+                empId = tasks.get(i).getEmployeeId();
+                tasks.remove(i);
+                break;
+            }
+        }
+
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getEmployeeID() == empId) {
+                for (int j = 0; j < employees.get(i).tasks.size(); j++) {
+                    if (employees.get(i).tasks.get(j).getId() == selectedID) {
+                        tasks.remove(i);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    public void addSkill(int skillId, int employeeId, String name, int level, String origin, String use) {
+        Skill s = new Skill(skillId, employeeId, name, level, origin, use);
+        skills.add(s);
+        for(int i = 0; i < employees.size(); i++) {
+            if(employees.get(i).getEmployeeID() == employeeId) {
+                employees.get(i).addSkill(s);
+                break;
+            }
+        }
+    }
+    public void editSkill(int skillId, int employeeId, String name, int level, String origin, String use) {
+        for (int i = 0; i < skills.size(); i++){
+            if (skills.get(i).getSkillId() == skillId){
+                skills.get(i).setName(name);
+                skills.get(i).setLevel(level);
+                skills.get(i).setOrigin(origin);
+                skills.get(i).setUse(use);
+                break;
+            }
+        }
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getEmployeeID() == employeeId) {
+                for (int j = 0; j < employees.get(i).skills.size(); j++) {
+                    if (employees.get(i).skills.get(j).getSkillId() == skillId) {
+                        skills.get(i).setName(name);
+                        skills.get(i).setLevel(level);
+                        skills.get(i).setOrigin(origin);
+                        skills.get(i).setUse(use);
+                        break;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    public void deleteSkill(int selectedID) {
+        int empId = -1;
+        for (int i = 0; i < skills.size(); i++) {
+            if (skills.get(i).getSkillId() == selectedID) {
+                empId = skills.get(i).getEmployeeId();
+                skills.remove(i);
+                break;
+            }
+        }
+
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getEmployeeID() == empId) {
+                for (int j = 0; j < employees.get(i).skills.size(); j++) {
+                    if (employees.get(i).skills.get(j).getSkillId() == selectedID) {
+                        skills.remove(i);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    // Added int employeeID parameter to addJob method so job can be added to employee objects -- John
+    public void addJob(int ID, int employeeID, String name, String title, String supervisor, int dateHired, ArrayList<Employee> jobs) {
+        Job j = new Job(employeeID, name, title, supervisor, dateHired);
+        Job.add(j);
+        for (int i = 0; i < employees.size(); i++) {    // Adds job to individual employee's list of jobs -- John
+            if (employees.get(i).getEmployeeID() == ID) {
+                employees.get(i).jobs.add(j);
+                break;
+            }
+        }
     }
 
     public void editJob(int ID, String title, String supervisor, Job[] jobs) {
@@ -130,13 +247,29 @@ public class TempArrays {
                 break;
             }
         }
+        // This should also update the corresponding employee's job list -- John
     }
 
-    public void deleteJob(int ID, ArrayList<Employee> jobs) {
+    public void deleteJob(int ID) {
         jobs.removeIf(job -> job.getID() == ID);
+        // This should also remove the corresponding employee's job from their job list -- John
+        for (int i = 0; i < employees.size(); i++) {    // Go through all employees
+            for (int j = 0; j < employees.get(i).jobs.size(); j++) {    // Go through employee's jobs
+                if (employees.get(i).jobs.get(j).getID() == ID) {   // If the job ID is right
+                    employees.get(i).jobs.remove(j);    // Remove it
+                    break;
+                }    
+            
+            }
+        }
     }
 
-    public void editEvaluation(int evaluationID, String employeeState, char grade) {}
-    public void deleteEvaluation(String name, int evaluationID, String employeeState, char grade ) {}
+    public void editEvaluation(int evaluationID, String employeeState, char grade) {
+        
+    }
+
+    public void deleteEvaluation(String name, int evaluationID, String employeeState, char grade ) {
+        
+    }
 
 }
