@@ -263,14 +263,6 @@ public class Temparrays {
         }
     }
 
-    public void editEvaluation(int evaluationID, String employeeState, char grade) {
-        
-    }
-
-    public void deleteEvaluation(String name, int evaluationID, String employeeState, char grade ) {
-        
-    }
-
     // Get a specific Job from the jobs list at the specified index
     public Job getJob(int index) {
         if (index >= 0 && index < jobs.size()) {
