@@ -1,28 +1,14 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class TempArrays {
-<<<<<<< HEAD
-   private ArrayList<Job> jobs;          // Array list to store Job objects
-    private ArrayList<Evaluation> evaluations;  // Array list to store Evaluation objects
-
-    // Constructor to initialize TempArray with empty ArrayLists
-    public TempArrays() {
-        this.jobs = new ArrayList<>();
-        this.evaluations = new ArrayList<>();
-        ArrayList<Employee> employees; // John
-        ArrayList<Task> tasks; // Duru
-        ArrayList<Skill> skills; // Duru
-        ArrayList<Job> jobs; // Jaden
-        ArrayList<Evaluation> evaluations; // Jaden
-=======
+public class Temparrays {
     public static ArrayList<Employee> employees; //John
     public static ArrayList<Task> tasks; // Duru
     public static ArrayList<Skill> skills; // Duru
     public static ArrayList<Job> jobs; // Jaden
     public static ArrayList<Evaluation> evaluations; // Jaden
 
-    public TempArrays() {}
+    public Temparrays() {}
 
     //public void editEmployee(int ID, String attribute, String newValue) {}
 
@@ -49,7 +35,6 @@ public class TempArrays {
                 break;
             }
         }
->>>>>>> 94bdd7cba3f0b7abdd5670a4c955a10082581c97
     }
 
     /**
@@ -136,13 +121,6 @@ public class TempArrays {
         }
     }
 
-<<<<<<< HEAD
-    // Methods for managing Job objects
-
-    // Add a new Job to the jobs list
-    public void addJob(Job job) {
-        jobs.add(job);
-=======
     public void editTask(int taskId, int employeeId, boolean completed, Date dateAssigned, Date dateCompleted, double progress) {
         for (int i = 0; i < tasks.size(); i++){
             if (tasks.get(i).getId() == taskId){
@@ -250,7 +228,7 @@ public class TempArrays {
     }
 
     // Added int employeeID parameter to addJob method so job can be added to employee objects -- John
-    public void addJob(int ID, int employeeID, String name, String title, String supervisor, int dateHired, ArrayList<Employee> jobs) {
+    public void addJob(int ID, int employeeID, String name, String title, String supervisor, java.sql.Date dateHired, ArrayList<Employee> jobs) {
         Job j = new Job(employeeID, name, title, supervisor, dateHired);
         Job.add(j);
         for (int i = 0; i < employees.size(); i++) {    // Adds job to individual employee's list of jobs -- John
@@ -259,7 +237,6 @@ public class TempArrays {
                 break;
             }
         }
->>>>>>> 94bdd7cba3f0b7abdd5670a4c955a10082581c97
     }
 
     // Edit an existing Job in the jobs list at the specified index
@@ -272,20 +249,6 @@ public class TempArrays {
         // This should also update the corresponding employee's job list -- John
     }
 
-<<<<<<< HEAD
-    // Delete an existing Job from the jobs list at the specified index
-    public void deleteJob(int index) {
-        if (index >= 0 && index < jobs.size()) {
-            jobs.remove(index);
-        } else {
-            System.out.println("Invalid index");
-        }
-    }
-
-    // Get all Job objects in the jobs list
-    public ArrayList<Job> getJobs() {
-        return jobs;
-=======
     public void deleteJob(int ID) {
         jobs.removeIf(job -> job.getID() == ID);
         // This should also remove the corresponding employee's job from their job list -- John
@@ -306,7 +269,6 @@ public class TempArrays {
 
     public void deleteEvaluation(String name, int evaluationID, String employeeState, char grade ) {
         
->>>>>>> 94bdd7cba3f0b7abdd5670a4c955a10082581c97
     }
 
     // Get a specific Job from the jobs list at the specified index

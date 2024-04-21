@@ -52,7 +52,7 @@ public class Employee {
 
         this.evaluation = new Evaluation(this.employeeID, "N/A", 'C');
 
-        TempArrays.employees.add(this); // Add new Employee to employees
+        Temparrays.employees.add(this); // Add new Employee to employees
     }
 
     public int generateRandomID() {
@@ -60,8 +60,8 @@ public class Employee {
         int newID = random.nextInt(899999999) + 100000000; // Generates a unique 9-digit number greater than 100,000,000
         boolean unique = true;
 
-        for (int i = 0; i < TempArrays.employees.size(); i++) {
-            if (TempArrays.employees.get(i).employeeID == newID) { // Checks generated ID against pre-existing ones
+        for (int i = 0; i < Temparrays.employees.size(); i++) {
+            if (Temparrays.employees.get(i).employeeID == newID) { // Checks generated ID against pre-existing ones
                 unique = false;
                 break;
             }

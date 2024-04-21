@@ -61,4 +61,9 @@ public class Job {
     public void setDateHired(Date dateHired) {
         this.dateHired = dateHired;
     }
+
+    public static void add(Job j) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    }
 }
