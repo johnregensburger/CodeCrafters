@@ -1,11 +1,15 @@
-public class Job {
-    private int ID;
-    private String name;
-    private String title;
-    private String supervisor;
-    private int dateHired;
+import java.sql.Date;
 
-    public Job(int ID, String name, String title, String supervisor, int dateHired) {
+public class Job {
+    // Attributes of the Job class
+    private int ID;             // Unique identifier for the job
+    private String name;        // Name of the employee in the job
+    private String title;       // Title or position of the job
+    private String supervisor;  // Name of the supervisor for the job
+    private Date dateHired;     // Date when the employee was hired for the job
+
+    // Constructor to initialize a Job object
+    public Job(int ID, String name, String title, String supervisor, Date dateHired) {
         this.ID = ID;
         this.name = name;
         this.title = title;
@@ -13,44 +17,48 @@ public class Job {
         this.dateHired = dateHired;
     }
 
+    // Getter method for retrieving the job ID
     public int getID() {
         return ID;
     }
 
+    // Getter method for retrieving the employee name
     public String getName() {
         return name;
     }
 
+    // Setter method for updating the employee name
     public void setName(String name) {
         this.name = name;
     }
 
+    // Getter method for retrieving the job title
     public String getTitle() {
         return title;
     }
 
+    // Setter method for updating the job title
     public void setTitle(String title) {
         this.title = title;
     }
 
+    // Getter method for retrieving the supervisor name
     public String getSupervisor() {
         return supervisor;
     }
 
+    // Setter method for updating the supervisor name
     public void setSupervisor(String supervisor) {
         this.supervisor = supervisor;
     }
 
-    public int getDateHired() {
+    // Getter method for retrieving the date of hire
+    public Date getDateHired() {
         return dateHired;
     }
 
-    public void setDateHired(int dateHired) {
+    // Setter method for updating the date of hire
+    public void setDateHired(Date dateHired) {
         this.dateHired = dateHired;
-    }
-
-    public static void add(Job job) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 }
