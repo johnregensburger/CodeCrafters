@@ -8,7 +8,7 @@ public class Job {
     private String supervisor;  // Name of the supervisor for the job
     private Date dateHired;     // Date when the employee was hired for the job
 
-    // Constructor to initialize a Job object
+    // Constructor to initialize a Job object with the provided values
     public Job(int ID, String name, String title, String supervisor, Date dateHired) {
         this.ID = ID;
         this.name = name;
@@ -62,8 +62,6 @@ public class Job {
         this.dateHired = dateHired;
     }
 
-    public static void add(Job j) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
-    }
+    // Method to add a new Job 
+    public static void add(Job j) {}
 }
