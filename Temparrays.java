@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
-
 public class Temparrays {
+    public static void main(String[] args) {}
     public static ArrayList<Employee> employees; //John
     public static ArrayList<Task> tasks; // Duru
     public static ArrayList<Skill> skills; // Duru
