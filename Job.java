@@ -119,4 +119,13 @@ public class Job {
                 ", dateHired=" + dateHired +
                 '}';
     }
+
+    public int getID() {
+        return employeeID;
+       
+    }
+
+    public static void add(Job j) {
+        
+    }
 }
