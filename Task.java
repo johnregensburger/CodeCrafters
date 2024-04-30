@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Date;
 
 public class Task {

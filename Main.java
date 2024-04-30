@@ -18,4 +18,3 @@ public class Main {
         h.setLevel("Expert");
         h.displayDetails();
     }
-}

@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Skill {
     private int skillId;
     private int employeeId;
