@@ -30,7 +30,7 @@ public class Employee {
     public Employee(String lastName, String firstName,
                     String streetAddress, String city, String state, String zip,
                     int phone, String email,
-                    String title, String supervisor, Date dateHired) {
+                    String title, String supervisor) {
         this.employeeID = generateRandomID();
 
         this.lastName = lastName;

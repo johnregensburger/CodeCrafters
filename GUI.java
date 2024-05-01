@@ -79,12 +79,12 @@ public class GUI {
          * accurately reflects the ArrayList of Employee objects in the backend
          */
         eVector.clear();
-        for (int i = 0; i < TempArrays.employees.size(); i++) {
+        for (int i = 0; i < Temparrays.employees.size(); i++) {
             Vector<Object> v = new Vector<>();
-            v.addElement(TempArrays.employees.get(i).getFullName());
-            v.addElement(TempArrays.employees.get(i).getFullAddress());
-            v.addElement(TempArrays.employees.get(i).getEmail());
-            v.addElement(TempArrays.employees.get(i).getPhone());
+            v.addElement(Temparrays.employees.get(i).getFullName());
+            v.addElement(Temparrays.employees.get(i).getFullAddress());
+            v.addElement(Temparrays.employees.get(i).getEmail());
+            v.addElement(Temparrays.employees.get(i).getPhone());
             eVector.add(v);
         }
         frame.dispose();
