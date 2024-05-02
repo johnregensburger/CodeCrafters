@@ -20,7 +20,7 @@ public class Temparrays {
      * @param attribute The attribute to be edited
      * @param newData The new value for the attribute
      */
-    public void editEmployee(int selectedID, String attribute, int newData) {
+    public static void editEmployee(int selectedID, String attribute, int newData) {
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeID() == selectedID) {
                 Employee e = employees.get(i);
@@ -43,7 +43,7 @@ public class Temparrays {
      * @param attribute The attribute to be edited
      * @param newData The new value for the attribute
      */
-    public void editEmployee(int selectedID, String attribute, String newData) {
+    public static void editEmployee(int selectedID, String attribute, String newData) {
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeID() == selectedID) {
                 Employee e = employees.get(i);
@@ -87,7 +87,7 @@ public class Temparrays {
      * @param attribute The attribute to be edited
      * @param newData The new value for the attribute
      */
-    public void editEmployee(int selectedID, String attribute, Date newData) {
+    public static void editEmployee(int selectedID, String attribute, Date newData) {
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeID() == selectedID) {
                 Employee e = employees.get(i);
@@ -101,7 +101,7 @@ public class Temparrays {
         }
     }
     
-    public void deleteEmployee(int selectedID) { // Removes Employee from employees
+    public static void deleteEmployee(int selectedID) { // Removes Employee from employees
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeID() == selectedID) {
                 employees.remove(i);
