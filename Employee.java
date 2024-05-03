@@ -22,9 +22,9 @@ public class Employee {
     private String supervisor;
     private Date dateHired; // Should be formatted as three different ints, YYYY MM DD
 
-    ArrayList<Task> tasks;
-    ArrayList<Skill> skills;
-    ArrayList<Job> jobs;
+    ArrayList<Task> tasks = new ArrayList<Task>();
+    ArrayList<Skill> skills = new ArrayList<Skill>();
+    ArrayList<Job> jobs = new ArrayList<Job>();
     Evaluation evaluation;
 
     public Employee(String lastName, String firstName,

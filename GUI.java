@@ -12,7 +12,7 @@ import java.time.ZoneId;
 public class GUI {
     static Vector<Vector<Object>> eVector = new Vector<>();
     public static void main(String[] args) {
-        // Create sample employees
+        // Create sample employee
         Employee sample = new Employee("Last", "First",
                     "Address", "Town", "State", "12345",
                     1234567890, "email@address.com",
@@ -195,7 +195,7 @@ public class GUI {
 
                                 evaluationPanel.add(employeeState);
                                 evaluationPanel.add(employeeGrade);
-                                employeeNotes.add(employeeNotes);
+                                evaluationPanel.add(employeeNotes);
                                 evaluationFrame.add(evaluationPanel);
 
                                 
