@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.Date;
 public class Temparrays {
     public static void main(String[] args) {}
-    public static ArrayList<Employee> employees; //John
-    public static ArrayList<Task> tasks; // Duru
-    public static ArrayList<Skill> skills; // Duru
-    public static ArrayList<Job> jobs; // Jaden
-    public static ArrayList<Evaluation> evaluations; // Jaden
+    public static ArrayList<Employee> employees = new ArrayList<Employee>(); //John
+    public static ArrayList<Task> tasks = new ArrayList<Task>(); // Duru
+    public static ArrayList<Skill> skills = new ArrayList<Skill>(); // Duru
+    public static ArrayList<Job> jobs = new ArrayList<Job>(); // Jaden
+    public static ArrayList<Evaluation> evaluations = new ArrayList<Evaluation>(); // Jaden
 
     public Temparrays() {}
 
@@ -20,7 +20,7 @@ public class Temparrays {
      * @param attribute The attribute to be edited
      * @param newData The new value for the attribute
      */
-    public void editEmployee(int selectedID, String attribute, int newData) {
+    public static void editEmployee(int selectedID, String attribute, int newData) {
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeID() == selectedID) {
                 Employee e = employees.get(i);
@@ -43,7 +43,7 @@ public class Temparrays {
      * @param attribute The attribute to be edited
      * @param newData The new value for the attribute
      */
-    public void editEmployee(int selectedID, String attribute, String newData) {
+    public static void editEmployee(int selectedID, String attribute, String newData) {
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeID() == selectedID) {
                 Employee e = employees.get(i);
@@ -87,7 +87,7 @@ public class Temparrays {
      * @param attribute The attribute to be edited
      * @param newData The new value for the attribute
      */
-    public void editEmployee(int selectedID, String attribute, Date newData) {
+    public static void editEmployee(int selectedID, String attribute, Date newData) {
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeID() == selectedID) {
                 Employee e = employees.get(i);
@@ -101,7 +101,7 @@ public class Temparrays {
         }
     }
     
-    public void deleteEmployee(int selectedID) { // Removes Employee from employees
+    public static void deleteEmployee(int selectedID) { // Removes Employee from employees
         for (int i = 0; i < employees.size(); i++) {
             if (employees.get(i).getEmployeeID() == selectedID) {
                 employees.remove(i);
