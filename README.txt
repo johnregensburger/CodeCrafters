@@ -1,3 +1,3 @@
 CSC 325 Code Crafters Repository
 
-//Jaden Mock - jmock@murraystate.edu
+Jaden Mock - jmock@murraystate.edu
